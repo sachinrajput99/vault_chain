@@ -4,12 +4,15 @@ import App from './App.jsx'
 import { MemoryRouter } from "react-router-dom"
 import './index.css'
 import WalletProvider from './providers/WalletProvider.jsx'
+import { ConfigProvider } from "antd"
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <MemoryRouter>
       <WalletProvider>
-      <App />
+        <ConfigProvider theme={{ token: { colorBgBase: '#24272a', colorTextBase: '#eee', colorTextSecondary: "black",colorBgSpotlight:"rgba(0, 0, 0, 0.8)" } }}>
+          <App />
+        </ConfigProvider>
       </WalletProvider>
     </MemoryRouter>
   </StrictMode>,

@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #24272a;
+  color: #eee;
 }
 
 code {
@@ -18,4 +20,8 @@ code {
 
 .ant-tabs-nav-wrap {
   justify-content: center !important;
+}
+
+.ant-select-item-option-selected {
+  color: #24272a !important;
 }

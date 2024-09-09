@@ -1,13 +1,16 @@
 {
-    "manifest_version":3,
-    "name":"Wallet",
-    "version":"1.0.0",
-    "description":"Wallet",
+    "manifest_version": 3,
+    "name": "Crypto Wallet",
+    "version": "1.0.0",
+    "description": "Crypto Wallet",
+    "icons": {
+        "128": "logo 128.png"
+    },
     "action": {
         "default_popup": "index.html",
-        "default_title": "Wallet"
+        "default_title": "Crypto Wallet"
     },
-    "permissions":[
+    "permissions": [
         "storage"
     ]
 }

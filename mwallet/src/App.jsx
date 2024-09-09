@@ -1,7 +1,7 @@
 import "./App.css";
 import { useContext } from "react";
 import { Select } from "antd";
-import logo from "./assets/logo.svg";
+import logo from "./assets/logo.png";
 import { chains } from "./constants";
 import { Routes, Route } from "react-router-dom"
 import Home from "./components/Home";
@@ -12,6 +12,7 @@ import { WalletContext } from "./providers/WalletProvider";
 
 function App() {
   const {selectedChain, setSelectedChain,wallet,seedPhrase} = useContext(WalletContext);
+console.log(selectedChain);
 
   return (
     <div className="App">

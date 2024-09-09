@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import mWallet from "../assets/mwallet.png";
+import mWallet from "../assets/logo.png";
 import { useNavigate } from "react-router-dom";
 
 function Home() {
@@ -7,7 +7,10 @@ function Home() {
 
   return (
     <div className="content">
-      <img src={mWallet} alt="logo" className="frontPageLogo" />
+      <div style={{ display: "flex", gap: 10 }}>
+        <img src={mWallet} alt="logo"  width={50} style={{ objectFit:'contain' }} />
+        <h5 style={{ fontWeight: "bold" , fontSize: 20}}>Web3 Wallet</h5>
+      </div>
       <h2>Hey There</h2>
       <h3>Welcome to your Web3 wallet</h3>
       <Button type="primary"

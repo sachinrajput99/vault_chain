@@ -9,7 +9,8 @@ app.use(cors());
 app.use(express.json());
 
 app.get("/getTokens", async (req, res) => {
-  const { userAddress, chain } = req.query
+  try {
+    const { userAddress, chain } = req.query
   const tokens = await Moralis.EvmApi.token.getWalletTokenBalances({
     address: userAddress,
     chain
@@ -34,8 +35,6 @@ app.get("/getTokens", async (req, res) => {
     chain,
   })
 
-  
-
   const jsonResponses = {
     tokens: tokens.raw,
     nfts: myNFTs,
@@ -43,6 +42,10 @@ app.get("/getTokens", async (req, res) => {
   }
   
   return res.status(200).json(jsonResponses);
+  } catch (error) {
+    console.log(error);
+    return res.status(500).json("Server Crashed");
+  }
 });
 
 Moralis.start({
