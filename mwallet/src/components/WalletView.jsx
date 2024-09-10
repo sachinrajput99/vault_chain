@@ -7,6 +7,7 @@ import useAccountDetails from "../hooks/useAcountDetails";
 import TokenItems from "./TokenItems";
 import NFTItems from "./NFTItems";
 import TransactionForm from "./TransactionForm";
+import Transactions from "./Transactions";
 
 
 
@@ -14,7 +15,7 @@ function WalletView() {
   const navigate = useNavigate();
 
   const { wallet, setWallet, setSeedPhrase, selectedChain } = useContext(WalletContext);
-  const { balance, getAccountDetails, nfts, tokens, resetAccountData, isFetching } = useAccountDetails();
+  const { balance, getAccountDetails, nfts, tokens, resetAccountData, isFetching,transactions } = useAccountDetails();
 
   const handleLogOut = useCallback(() => {
     resetAccountData();
@@ -25,10 +26,17 @@ function WalletView() {
 
   const items = [
     {
-      key: '3',
+      key: '4',
       label: 'Tokens',
       children: (
         <TokenItems tokens={tokens} />
+      )
+    },
+    {
+      key: '3',
+      label: 'Tx History',
+      children: (
+        <Transactions transactions={transactions} />
       )
     },
     {

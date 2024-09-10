@@ -12,7 +12,6 @@ import { WalletContext } from "./providers/WalletProvider";
 
 function App() {
   const {selectedChain, setSelectedChain,wallet,seedPhrase} = useContext(WalletContext);
-console.log(selectedChain);
 
   return (
     <div className="App">

@@ -16,6 +16,10 @@ export const chains = [
         value: "0xa86a",
     },
     {
+        label: "CrossFi",
+        value: "4157",
+    },
+    {
         label : "Sepolia",
         value: "0xaa36a7"
     }

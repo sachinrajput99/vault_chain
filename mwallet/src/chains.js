@@ -12,6 +12,13 @@ const MumbaiTestnet = {
     ticker: "MATIC"
 };
 
+const CrossFi = {
+    hex:  '4157',
+    name: 'CrossFi',
+    rpcUrl: 'https://rpc.testnet.ms',
+    ticker: "XFI"
+}
+
 const SepoliaTestnet = {
     hex: '0xaa36a7',
     name: 'Sepolia Testnet',
@@ -22,5 +29,6 @@ const SepoliaTestnet = {
 export const CHAINS_CONFIG = {
     "0x1": Ethereum,
     "0x13881": MumbaiTestnet,
-    "0xaa36a7": SepoliaTestnet
+    "0xaa36a7": SepoliaTestnet,
+    "4157": CrossFi
 };
