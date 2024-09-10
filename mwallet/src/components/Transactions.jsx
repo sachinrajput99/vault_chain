@@ -1,5 +1,4 @@
 /* eslint-disable react/prop-types */
-import { transactionData } from "../data"
 import TransactionItem from "./TransactionItem"
 
 const Transactions = ({ transactions }) => {
@@ -8,7 +7,7 @@ const Transactions = ({ transactions }) => {
   return (
     <>
       {
-        transactionData ? (
+        transactions ? (
          transactions.map(tx => (
           <TransactionItem key={tx.hash} transaction={tx} />
          ))
