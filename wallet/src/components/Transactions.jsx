@@ -2,7 +2,6 @@
 import TransactionItem from "./TransactionItem"
 
 const Transactions = ({ transactions }) => {
-  console.log(transactions);
   
   return (
     <>

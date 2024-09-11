@@ -5,17 +5,24 @@ const Ethereum = {
     ticker: "ETH"
 };
 
-const MumbaiTestnet = {
-    hex: '0x13881',
-    name: 'Mumbai Testnet',
-    rpcUrl: '',
-    ticker: "MATIC"
-};
+// const MumbaiTestnet = {
+//     hex: '0x13881',
+//     name: 'Mumbai Testnet',
+//     rpcUrl: '',
+//     ticker: "MATIC"
+// };
 
-const CrossFi = {
-    hex:  '4157',
-    name: 'CrossFi',
-    rpcUrl: 'https://rpc.testnet.ms',
+// const Polygon = {
+//     hex: '0x89',
+//     name: 'Polygon',
+//     rpcUrl: "https://polygon-bor-rpc.publicnode.com",
+//     ticker: "MATIC"
+// }
+
+const CrossFiTestnet = {
+    hex: '4157',
+    name: 'CrossFi Testnet',
+    rpcUrl: "https://rpc.testnet.ms",
     ticker: "XFI"
 }
 
@@ -28,7 +35,7 @@ const SepoliaTestnet = {
 
 export const CHAINS_CONFIG = {
     "0x1": Ethereum,
-    "0x13881": MumbaiTestnet,
+    // "0x13881": MumbaiTestnet,
     "0xaa36a7": SepoliaTestnet,
-    "4157": CrossFi
+    "4157": CrossFiTestnet
 };

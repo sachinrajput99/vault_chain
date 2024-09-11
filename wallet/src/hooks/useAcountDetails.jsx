@@ -29,9 +29,9 @@ export default function useAccountDetails() {
         });
         const data = response.data
         setTokens(data.tokens);
-        setNfts(data.nfts.length > 0 ? data.nfts : null);
+        setNfts(data.nfts?.length > 0 ? data.nfts : null);
         setBalance(data.balance);
-        setTransactions(data.transactions.length > 0 ? data.transactions : null);
+        setTransactions(data.transactions?.length > 0 ? data.transactions : null);
         setIsFetching(false);
     }, [])
 
