@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { Button, Input, Spin, Tooltip } from "antd"
 import { CHAINS_CONFIG } from "../chains"
 import { useContext } from "react"
@@ -5,7 +6,6 @@ import { WalletContext } from "../providers/WalletProvider"
 import useSendTransaction from "../hooks/useSendTransaction"
 
 
-// eslint-disable-next-line react/prop-types
 const TransactionForm = ({ balance, successCallback }) => {
     const { selectedChain } = useContext(WalletContext);
     const { amountToSend, processing, sendToAddress, sendTransaction, setAmountToSend, setSendToAddress, txHash } = useSendTransaction(successCallback);

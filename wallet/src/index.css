@@ -25,3 +25,7 @@ code {
 .ant-select-item-option-selected {
   color: #24272a !important;
 }
+
+.ant-notification-notice-message {
+  color: #eee !important;
+}

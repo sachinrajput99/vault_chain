@@ -1,10 +1,11 @@
-import {ethers} from "ethers";
-import { useState, useCallback,useContext } from "react";
+import { ethers } from "ethers";
+import { useState, useCallback, useContext } from "react";
 import { WalletContext } from "../providers/WalletProvider";
 import { CHAINS_CONFIG } from "../chains";
+import { notification } from "antd";
 
 export default function useSendTransaction(callbackAfterSuccess) {
-    const {seedPhrase, selectedChain} = useContext(WalletContext);
+    const { seedPhrase, selectedChain } = useContext(WalletContext);
     const [sendToAddress, setSendToAddress] = useState('');
     const [amountToSend, setAmountToSend] = useState('');
     const [processing, setProcessing] = useState(false);
@@ -28,9 +29,25 @@ export default function useSendTransaction(callbackAfterSuccess) {
             await transaction.wait();
             await callbackAfterSuccess()
         } catch (error) {
+            if (error?.shortMessage === 'insufficient funds') {
+                notification.error({
+                    message: "Insuficcient funds",
+                    placement: 'topLeft',
+                    style: {
+                        fontSize: 10,
+                        padding: 9,
+                        backgroundColor: '#222',
+                        borderRadius: 5,
+                        color: '#eee',
+                        width: "200px",
+                    },
+                    closable: false,
+                    duration: 2
+                })
+                return
+            }
             setAmountToSend('')
             setSendToAddress('')
-            console.log(error);
         } finally {
             setProcessing(false);
             setTxHash(null);
