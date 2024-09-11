@@ -168,8 +168,9 @@ header {
 .transaction-info {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.transaction-info span {
-  font-size: 13px;
+.transaction-info small {
+  font-size: 11px;
 }

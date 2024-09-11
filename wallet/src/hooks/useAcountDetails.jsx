@@ -37,7 +37,7 @@ export default function useAccountDetails() {
 
     // Initially fetch account details
     useEffect(() => {
-        if (!wallet || !selectedChain) {
+        if ((!wallet || !selectedChain)) {
             return
         }
         getAccountDetails(wallet, selectedChain)
@@ -46,7 +46,7 @@ export default function useAccountDetails() {
 
     // After any updates in the wallet, fetch the account details
     useEffectAfterMount(() => {
-        if (!wallet || !selectedChain) {
+        if ((!wallet || !selectedChain)) {
             return
         }
         getAccountDetails(wallet, selectedChain);

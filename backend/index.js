@@ -57,18 +57,6 @@ app.get("/getTokens", async (req, res) => {
   }
 });
 
-app.get("/transactions", async (req, res)=> {
-  const { userAddress, chain } = req.query
-
-  const transactionResponse  = await Moralis.EvmApi.transaction.getWalletTransactions({
-    address: userAddress,
-    chain
-  });
-
-  const transactions = transactionResponse.toJSON().result.filter((tx => tx.to_address !== null))
-
-  return res.status(200).json(transactions);
-})
 
 Moralis.start({
   apiKey: process.env.MORALIS_KEY,

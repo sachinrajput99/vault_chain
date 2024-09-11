@@ -15,10 +15,10 @@ export const chains = [
         label: "Avalanche",
         value: "0xa86a",
     },
-    {
-        label: "CrossFi",
-        value: "4157",
-    },
+    // {
+    //     label: "CrossFi",
+    //     value: "4157",
+    // },
     {
         label : "Sepolia",
         value: "0xaa36a7"

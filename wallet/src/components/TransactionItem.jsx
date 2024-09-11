@@ -10,7 +10,7 @@ const TransactionItem = ({ transaction }) => {
     const isSender = useMemo(() => transaction.from_address === wallet.toLowerCase(), [transaction.from_address, wallet])
     const unit = useMemo(() => CHAINS_CONFIG[selectedChain].ticker, [selectedChain])
 
-    const firstMessage = useMemo(()=> isSender? <>To : <span>{transaction.to_address}</span></>:<>From: <span>{transaction.from_address}</span></>, [isSender, transaction.to_address, transaction.from_address])
+    const firstMessage = useMemo(()=> isSender? <>To : <small>{transaction.to_address}</small></>:<>From: <small>{transaction.from_address}</small></>, [isSender, transaction.to_address, transaction.from_address])
 
     const amountMessage = useMemo(()=> `${isSender ? '-' : '+'} ${ethers.formatEther(transaction.value)}`, [isSender, transaction.value])
     // Modal Logic
@@ -41,11 +41,11 @@ const TransactionItem = ({ transaction }) => {
                 cancelButtonProps={{ style: { display: 'none' } }}
                 okButtonProps={{ style: { display: 'none' } }}
             >
-                <p className="transaction-info">Nonce : <span>{transaction.nonce}</span></p>
+                <p className="transaction-info">Nonce : <small>{transaction.nonce}</small></p>
                 <p className="transaction-info">{firstMessage}</p>
-                <p className="transaction-info">Amount : <span>{amountMessage}{CHAINS_CONFIG[selectedChain].ticker}</span></p>
-                <p className="transaction-info">Time : <span>{(new Date(transaction.block_timestamp).toLocaleString('en-US'))}</span></p>
-                <p className="transaction-info">Transaction Fee : <span>{transaction.transaction_fee}{CHAINS_CONFIG[selectedChain].ticker}</span></p>
+                <p className="transaction-info">Amount : <small>{amountMessage}{CHAINS_CONFIG[selectedChain].ticker}</small></p>
+                <p className="transaction-info">Time : <small>{(new Date(transaction.block_timestamp).toLocaleString('en-US'))}</small></p>
+                <p className="transaction-info">Transaction Fee : <small>{transaction.transaction_fee}{CHAINS_CONFIG[selectedChain].ticker}</small></p>
             </Modal>
         </>
     )

@@ -11,7 +11,7 @@ import WalletView from "./components/WalletView";
 import { WalletContext } from "./providers/WalletProvider";
 
 function App() {
-  const {selectedChain, setSelectedChain,wallet,seedPhrase} = useContext(WalletContext);
+  const { selectedChain, setSelectedChain, wallet, seedPhrase } = useContext(WalletContext);
 
   return (
     <div className="App">
@@ -28,8 +28,8 @@ function App() {
           :
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/recover" element={<RecoverAccount  />} />
-            <Route path="/your-wallet" element={<CreateAccount  />} />
+            <Route path="/recover" element={<RecoverAccount />} />
+            <Route path="/your-wallet" element={<CreateAccount />} />
           </Routes>
       }
     </div>
