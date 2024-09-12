@@ -20,12 +20,12 @@ function Home() {
       <Button className="frontPageButton" type="default" onClick={() => navigate("/recover")}>
         Sign In With Seed Phrase
       </Button>
-      <p className="frontPageBottom">
+      {/* <p className="frontPageBottom">
         Find Alt Coin Gems!{" "}
         <a href="https://moralismoney.com" target="_blank" rel="noreferrer">
           money.moralis.io
         </a>
-      </p>
+      </p> */}
     </div>
   );
 }

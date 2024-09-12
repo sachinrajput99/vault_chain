@@ -41,7 +41,7 @@ const TransactionItem = ({ transaction }) => {
                 cancelButtonProps={{ style: { display: 'none' } }}
                 okButtonProps={{ style: { display: 'none' } }}
             >
-                <p className="transaction-info">Nonce : <small>{transaction.nonce || 0}</small></p>
+                <p className="transaction-info">Nonce : <small>{transaction.nonce || "N/A"}</small></p>
                 <p className="transaction-info">{firstMessage}</p>
                 <p className="transaction-info">Amount : <small>{amountMessage}{CHAINS_CONFIG[selectedChain].ticker}</small></p>
                 <p className="transaction-info">Time : <small>{(new Date(transaction.block_timestamp).toLocaleString('en-US'))}</small></p>
