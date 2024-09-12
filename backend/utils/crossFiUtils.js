@@ -9,23 +9,33 @@ async function crossFiAccountDetails(userAddress) {
         const transactionRes = await axios.get(`https://test.xfiscan.com/api/1.0/txs?address=${userAddress}`);
         const transactionsData = transactionRes.data.docs;
 
-        const transactions = transactionsData.filter(tx => tx.body.messages[0].data).map(tx => {
+        const transactions = transactionsData.map(tx => {
             const res = {
                 hash: "",
                 nonce: 0,
                 from_address: "",
                 to_address: "",
-                amount: 0,
+                value: 0,
                 transaction_fee: 0,
                 block_timestamp: 0
             }
             const data = tx.body.messages[0].data;
+
+            if (data) {
+                res.nonce = data.nonce;
+                res.from_address = data.from;
+                res.to_address = data.to;
+                res.transaction_fee = data.base_fee_per_gas;
+                res.value = data.value;
+            } else {
+                res.nonce = null;
+                res.value = tx.auth_info.fee.amount[0].amount;
+                res.from_address = tx.addresses[0];
+                res.to_address = tx.addresses[2];
+                res.value = tx.body.messages[0].amount[0].amount;
+            }
+            
             res.hash = tx.txhash;
-            res.nonce = data.nonce;
-            res.from_address = data.from;
-            res.to_address = data.to;
-            res.transaction_fee = data.base_fee_per_gas;
-            res.value = data.value;
             res.block_timestamp = tx.timestamp
             return res
         })
@@ -45,5 +55,8 @@ async function crossFiAccountDetails(userAddress) {
 
     }
 }
+
+crossFiAccountDetails('0x631B429592F95142a7Ed7cC30a03f8Cf51340F4f');
+
 
 module.exports = { crossFiAccountDetails };
