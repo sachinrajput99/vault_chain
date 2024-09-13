@@ -47,16 +47,19 @@ async function crossFiAccountDetails(userAddress) {
             transactions
         }
     } catch (error) {
-        if (error?.response?.status) {
+        if (error?.response?.status === 404) {
             console.log('Account not found');
+
+            return {
+                balance: null,
+                nfts: null,
+                tokens: null,
+                transactions: null
+            }
         }
-
-        console.log('error', error);
-
     }
 }
 
 crossFiAccountDetails('0x631B429592F95142a7Ed7cC30a03f8Cf51340F4f');
-
 
 module.exports = { crossFiAccountDetails };
