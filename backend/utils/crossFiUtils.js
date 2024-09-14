@@ -48,7 +48,6 @@ async function crossFiAccountDetails(userAddress) {
         }
     } catch (error) {
         if (error?.response?.status === 404) {
-            console.log('Account not found');
 
             return {
                 balance: null,
@@ -59,7 +58,5 @@ async function crossFiAccountDetails(userAddress) {
         }
     }
 }
-
-crossFiAccountDetails('0x631B429592F95142a7Ed7cC30a03f8Cf51340F4f');
 
 module.exports = { crossFiAccountDetails };
