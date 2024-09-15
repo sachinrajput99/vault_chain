@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Cross Wallet",
     "version": "1.0.0",
-    "description": "Cross Wallet",
+    "description": "This extension is a secure wallet designed to interact with CrossFi and various EVM-compatible blockchains, allowing users to send and receive native coins seamlessly.",
     "icons": {
         "128": "logo 128.png"
     },
