@@ -1,17 +1,14 @@
 {
     "manifest_version": 3,
-    "name": "Crypto Wallet",
+    "name": "Cross Wallet",
     "version": "1.0.0",
-    "description": "Crypto Wallet",
+    "description": "Cross Wallet",
     "icons": {
         "128": "logo 128.png"
     },
     "action": {
         "default_popup": "index.html",
-        "default_title": "Crypto Wallet"
+        "default_title": "Cross Wallet"
     },
-    "permissions": [
-        "storage",
-        "activeTab"
-    ]
+    "permissions": []
 }

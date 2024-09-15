@@ -9,10 +9,10 @@ function Home() {
     <div className="content">
       <div style={{ display: "flex", gap: 10 }}>
         <img src={mWallet} alt="logo"  width={50} style={{ objectFit:'contain' }} />
-        <h5 style={{ fontWeight: "bold" , fontSize: 20}}>Web3 Wallet</h5>
+        <h5 style={{ fontWeight: "bold" , fontSize: 20}}>Cross Wallet</h5>
       </div>
       <h2>Hey There</h2>
-      <h3>Welcome to your Web3 wallet</h3>
+      <h3>Welcome to Cross Wallet</h3>
       <Button type="primary"
         onClick={() => navigate("/your-wallet")} className="frontPageButton">
         Create A Wallet
@@ -20,12 +20,6 @@ function Home() {
       <Button className="frontPageButton" type="default" onClick={() => navigate("/recover")}>
         Sign In With Seed Phrase
       </Button>
-      {/* <p className="frontPageBottom">
-        Find Alt Coin Gems!{" "}
-        <a href="https://moralismoney.com" target="_blank" rel="noreferrer">
-          money.moralis.io
-        </a>
-      </p> */}
     </div>
   );
 }
