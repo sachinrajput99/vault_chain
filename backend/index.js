@@ -6,7 +6,7 @@ const app = express();
 const cors = require("cors");
 const { validateAddress } = require("./utils/valid");
 require("dotenv").config();
-const port = 3001;
+const port = 3006;
 
 app.use(cors());
 app.use(express.json());

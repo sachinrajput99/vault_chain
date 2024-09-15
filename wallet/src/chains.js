@@ -1,7 +1,7 @@
 const Ethereum = {
     hex: '0x1',
     name: 'Ethereum',
-    rpcUrl: '',
+    rpcUrl: 'https://eth-mainnet.g.alchemy.com/v2/2WgmYnBXqWCkpDaHOXaSZnyTRuCbzodv',
     ticker: "ETH"
 };
 
