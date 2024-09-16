@@ -1,19 +1,21 @@
+import { useCallback, useContext, useMemo, useState } from "react";
 import { BulbOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
-import { useCallback, useContext, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ethers } from "ethers";
 import { WalletContext } from "../providers/WalletProvider";
+import { encryptData } from "../utils";
 
 const { TextArea } = Input;
 
 function RecoverAccount() {
   const { setSeedPhrase, setWallet } = useContext(WalletContext);
-  
+
   const [seedPhraseInput, setSeedPhraseInput] = useState('');
+  const [passwordInput, setPasswordInput] = useState('');
   const [notValid, setNotValid] = useState(false);
   const navigate = useNavigate();
-  const disableBtn = useMemo(() => seedPhraseInput.split(" ").length !== 12 || seedPhraseInput.at(-1) === " ", [seedPhraseInput]);
+  const disableBtn = useMemo(() => (seedPhraseInput.split(" ").length !== 12 || seedPhraseInput.at(-1) === " ") || (passwordInput.length < 8), [seedPhraseInput, passwordInput]);
 
   const handleInput = useCallback((e) => {
     setSeedPhraseInput(e.target.value);
@@ -23,16 +25,21 @@ function RecoverAccount() {
     let recoverWallet;
     try {
       recoverWallet = ethers.Wallet.fromPhrase(seedPhraseInput);
-    // eslint-disable-next-line no-unused-vars
+      // eslint-disable-next-line no-unused-vars
     } catch (e) {
       setNotValid(true);
       return;
     }
-    
+
     setWallet(recoverWallet.address);
     setSeedPhrase(seedPhraseInput);
+
+    const token = `${seedPhraseInput}-P-${passwordInput}`;
+    const enc = encryptData(token);
+    localStorage.setItem('token', enc);
+
     navigate("/your-wallet");
-  }, [seedPhraseInput, setWallet, setSeedPhrase, navigate]);
+  }, [seedPhraseInput, setWallet, setSeedPhrase, navigate, passwordInput]);
 
 
   return (
@@ -44,7 +51,9 @@ function RecoverAccount() {
         </div>
       </div>
 
-      <TextArea rows={4} value={seedPhraseInput} onChange={handleInput} placeholder="Type your seed phrase here..." className="seedPhraseContainer" />
+      <TextArea rows={7} value={seedPhraseInput} onChange={handleInput} placeholder="Type your seed phrase here..." className="seedPhraseContainer" />
+
+      <Input.Password value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} className="password" placeholder="Type your password here..." />
 
       <Button disabled={disableBtn} className="frontPageButton" type="primary" onClick={handleRecoverWallet}>
         Recover Wallet

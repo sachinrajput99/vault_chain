@@ -1,9 +1,10 @@
 /* eslint-disable react/prop-types */
-import { Button, Input, Spin, Tooltip } from "antd"
+import { Button, Input, Spin } from "antd"
 import { CHAINS_CONFIG } from "../chains"
 import { useContext } from "react"
 import { WalletContext } from "../providers/WalletProvider"
 import useSendTransaction from "../hooks/useSendTransaction"
+import CopyBTN from "./CopyBTN"
 
 
 const TransactionForm = ({ balance, successCallback }) => {
@@ -30,16 +31,14 @@ const TransactionForm = ({ balance, successCallback }) => {
             </Button>
             {
                 processing && (
-                    <>
+                    <div style={{ display: 'flex', justifyContent: 'center' , alignItems:'center', flexDirection:'column', columnGap:'9px'}}>
                         <Spin />
                         {
                             txHash && (
-                                <Tooltip title={txHash}>
-                                    <p>Hover for Transaction Hash</p>
-                                </Tooltip>
+                                <CopyBTN text={txHash} label={'Copy Transaction Hash'} />
                             )
                         }
-                    </>
+                    </div>
                 )
             }
         </>

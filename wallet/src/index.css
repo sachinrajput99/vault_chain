@@ -29,3 +29,9 @@ code {
 .ant-notification-notice-message {
   color: #eee !important;
 }
+
+.password {
+    width: 310px;
+    padding: 10px;
+    margin-block: 5px;
+}

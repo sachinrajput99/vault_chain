@@ -174,3 +174,12 @@ header {
 .transaction-info small {
   font-size: 11px;
 }
+
+.clickEffect {
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+.clickEffect:active {
+  transform: scale(.9);
+}

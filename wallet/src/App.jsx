@@ -9,6 +9,7 @@ import RecoverAccount from "./components/RecoverAccount";
 import CreateAccount from "./components/CreateAccount";
 import WalletView from "./components/WalletView";
 import { WalletContext } from "./providers/WalletProvider";
+import LoginPage from "./components/LoginPage";
 
 function App() {
   const { selectedChain, setSelectedChain, wallet, seedPhrase } = useContext(WalletContext);
@@ -30,6 +31,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/recover" element={<RecoverAccount />} />
             <Route path="/your-wallet" element={<CreateAccount />} />
+            <Route path="/login" element={<LoginPage />} />
           </Routes>
       }
     </div>
