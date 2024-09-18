@@ -47,7 +47,7 @@ function CreateAccount() {
           </pre>
         }
       </Card>
-      <Password value={newPassword} onChange={(e) => setNewPassword(e.target.value)} className="password" placeholder="Type your password here..." />
+      <Password value={newPassword} onChange={(e) => setNewPassword(e.target.value)} className="password" placeholder="Password. Minimum 8 characters." />
       <Button disabled={disableBtn} className="frontPageButton" type="default" onClick={setWalletAndMnemonic}>
         Open your wallet
       </Button>

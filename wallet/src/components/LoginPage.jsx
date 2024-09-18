@@ -1,4 +1,4 @@
-import { Button, Input } from "antd"
+import { Button, Input, Tooltip } from "antd"
 import { ethers } from "ethers";
 import { useContext, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -17,7 +17,7 @@ const LoginPage = () => {
   const handleLogin = () => {
     const token = localStorage.getItem('token');
     const dec = decryptData(token);
-    const [seedPhrase,password] = dec.split('-P-');
+    const [seedPhrase, password] = dec.split('-P-');
     if (password !== (passwordInput)) {
       setNotValid(true)
       return;
@@ -41,8 +41,16 @@ const LoginPage = () => {
         Unlock
       </Button>
 
-      <p className="frontPageBottom" onClick={() => navigate("/")}>
-        <span>Back To Home</span>
+      <p className="frontPageBottom" style={{ flexDirection: 'column', alignItems: 'center' }}>
+        <Tooltip title="Recover your wallet with the seed phrase and type a new password" onClick={() => navigate("/recover")}>
+          <span>Forgot Password</span>
+        </Tooltip>
+        <Tooltip title="Use another wallet" onClick={() => {
+          localStorage.removeItem('token')
+          navigate("/")
+        }}>
+          <span>Import a different wallet</span>
+        </Tooltip>
       </p>
     </>
   )

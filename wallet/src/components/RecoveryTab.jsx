@@ -9,6 +9,7 @@ const RecoveryTab = () => {
     const { seedPhrase } = useContext(WalletContext);
     const [passwordInput, setPasswordInput] = useState();
     const [validated, setValidated] = useState(false);
+    const [error, setError] = useState(false);
 
     const handleValidate = useCallback(() => {
         const token = localStorage.getItem('token');
@@ -16,7 +17,10 @@ const RecoveryTab = () => {
         // eslint-disable-next-line no-unused-vars
         const [_seedPhrase, password] = dec.split('-P-');
         if (passwordInput === password) {
+            setError(false)
             setValidated(true)
+        } else {
+            setError(true)
         }
     }, [passwordInput])
 
@@ -49,8 +53,18 @@ const RecoveryTab = () => {
 
     return (
         <>
-            <Password value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} className="password" />
-            <Button className="frontPageButton" type="primary" onClick={handleValidate}>Recover Phrase</Button>
+            <Password value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} className="password" placeholder="Type your password here..." />
+                {
+                    error && <p style={{ color: "red" }}>Invalid password</p>
+                }
+            {
+                validated ? (
+                    <Button className="frontPageButton" type="secondary" onClick={() => {
+                        setPasswordInput("")
+                        setValidated(false)
+                    }}>Hide</Button>
+                ) : <Button className="frontPageButton" type="primary" onClick={handleValidate}>Recover Phrase</Button>
+            }
             <Tooltip title={validated ? "Click to copy the seed phrase" : ""}>
                 <Card className={`seedPhraseContainer ${validated ? "clickEffect" : ""}`} style={{ marginInline: 'auto', marginTop: '9px' }} onClick={handleCopy}>
                     {

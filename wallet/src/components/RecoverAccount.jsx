@@ -53,7 +53,7 @@ function RecoverAccount() {
 
       <TextArea rows={7} value={seedPhraseInput} onChange={handleInput} placeholder="Type your seed phrase here..." className="seedPhraseContainer" />
 
-      <Input.Password value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} className="password" placeholder="Type your password here..." />
+      <Input.Password value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} className="password" placeholder="Password. Minimum 8 characters." />
 
       <Button disabled={disableBtn} className="frontPageButton" type="primary" onClick={handleRecoverWallet}>
         Recover Wallet
