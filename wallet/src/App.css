@@ -29,7 +29,7 @@
   color: #eee;
 }
 
-.frontPageBottom:hover {
+.frontPageBottom:not(.noHover):hover, .link:hover {
   cursor: pointer;
   color: gray;
 }

@@ -41,15 +41,15 @@ const LoginPage = () => {
         Unlock
       </Button>
 
-      <p className="frontPageBottom" style={{ flexDirection: 'column', alignItems: 'center' }}>
+      <p className="frontPageBottom noHover" style={{ flexDirection: 'column', alignItems: 'center' }}>
         <Tooltip title="Recover your wallet with the seed phrase and type a new password" onClick={() => navigate("/recover")}>
-          <span>Forgot Password</span>
+          <span className="link">Forgot Password</span>
         </Tooltip>
         <Tooltip title="Use another wallet" onClick={() => {
           localStorage.removeItem('token')
           navigate("/")
         }}>
-          <span>Import a different wallet</span>
+          <span className="link">Import a different wallet</span>
         </Tooltip>
       </p>
     </>
