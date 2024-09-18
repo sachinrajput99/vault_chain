@@ -24,3 +24,5 @@ export const chains = [
         value: "0xaa36a7"
     }
 ]
+
+export const TOKEN_KEY = "crossfi-login-token";

@@ -21,3 +21,15 @@ export function decryptData(data){
     const dec = Crypto.AES.decrypt(data, '201238123');
     return dec.toString(Crypto.enc.Utf8);
 }
+
+export function createToken(seedPhrase, password){
+    return `${seedPhrase}-P-${password}`;
+}
+
+export function getDataFromToken(token){
+    const [seedPhrase, password] = token.split('-P-');
+    return {
+        seedPhrase,
+        password
+    }
+}

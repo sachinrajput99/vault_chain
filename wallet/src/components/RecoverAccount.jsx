@@ -4,7 +4,8 @@ import { Button, Input } from "antd";
 import { useNavigate } from "react-router-dom";
 import { ethers } from "ethers";
 import { WalletContext } from "../providers/WalletProvider";
-import { encryptData } from "../utils";
+import { createToken, encryptData } from "../utils";
+import { TOKEN_KEY } from "../constants";
 
 const { TextArea } = Input;
 
@@ -34,9 +35,9 @@ function RecoverAccount() {
     setWallet(recoverWallet.address);
     setSeedPhrase(seedPhraseInput);
 
-    const token = `${seedPhraseInput}-P-${passwordInput}`;
-    const enc = encryptData(token);
-    localStorage.setItem('token', enc);
+    const token = createToken(seedPhraseInput, passwordInput);
+    const encryptedToken = encryptData(token);
+    localStorage.setItem(TOKEN_KEY, encryptedToken);
 
     navigate("/your-wallet");
   }, [seedPhraseInput, setWallet, setSeedPhrase, navigate, passwordInput]);

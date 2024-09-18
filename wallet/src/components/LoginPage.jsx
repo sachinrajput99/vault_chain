@@ -3,7 +3,8 @@ import { ethers } from "ethers";
 import { useContext, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { WalletContext } from "../providers/WalletProvider";
-import { decryptData } from "../utils";
+import { decryptData, getDataFromToken } from "../utils";
+import { TOKEN_KEY } from "../constants";
 
 const { Password } = Input;
 
@@ -15,9 +16,9 @@ const LoginPage = () => {
   const disableBtn = useMemo(() => passwordInput.length < 8, [passwordInput])
 
   const handleLogin = () => {
-    const token = localStorage.getItem('token');
-    const dec = decryptData(token);
-    const [seedPhrase, password] = dec.split('-P-');
+    const token = localStorage.getItem(TOKEN_KEY);
+    const decryptedToken = decryptData(token);
+    const { password, seedPhrase } = getDataFromToken(decryptedToken);
     if (password !== (passwordInput)) {
       setNotValid(true)
       return;
@@ -46,7 +47,7 @@ const LoginPage = () => {
           <span className="link">Forgot Password</span>
         </Tooltip>
         <Tooltip title="Use another wallet" onClick={() => {
-          localStorage.removeItem('token')
+          localStorage.removeItem(TOKEN_KEY)
           navigate("/")
         }}>
           <span className="link">Import a different wallet</span>

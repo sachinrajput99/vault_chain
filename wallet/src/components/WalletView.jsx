@@ -10,6 +10,7 @@ import TransactionForm from "./TransactionForm";
 import Transactions from "./Transactions";
 import CopyBTN from "./CopyBTN";
 import RecoveryTab from "./RecoveryTab";
+import { TOKEN_KEY } from "../constants";
 
 
 function WalletView() {
@@ -22,7 +23,7 @@ function WalletView() {
     resetAccountData();
     setSeedPhrase(null);
     setWallet(null);
-    localStorage.removeItem('token');
+    localStorage.removeItem(TOKEN_KEY);
     navigate("/")
   }, [navigate, setSeedPhrase, setWallet, resetAccountData]);
 

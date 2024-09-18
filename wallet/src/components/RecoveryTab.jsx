@@ -1,7 +1,8 @@
 import { Button, Card, Input, notification, Tooltip } from "antd"
 import { useCallback, useContext, useEffect, useState } from "react"
 import { WalletContext } from "../providers/WalletProvider";
-import { decryptData } from "../utils";
+import {  decryptData, getDataFromToken } from "../utils";
+import { TOKEN_KEY } from "../constants";
 
 
 const { Password } = Input
@@ -12,10 +13,10 @@ const RecoveryTab = () => {
     const [error, setError] = useState(false);
 
     const handleValidate = useCallback(() => {
-        const token = localStorage.getItem('token');
-        const dec = decryptData(token);
-        // eslint-disable-next-line no-unused-vars
-        const [_seedPhrase, password] = dec.split('-P-');
+        const token = localStorage.getItem(TOKEN_KEY);
+        const decryptedToken = decryptData(token);
+
+        const { password } = getDataFromToken(decryptedToken);
         if (passwordInput === password) {
             setError(false)
             setValidated(true)
@@ -54,12 +55,12 @@ const RecoveryTab = () => {
     return (
         <>
             <Password value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} className="password" placeholder="Type your password here..." />
-                {
-                    error && <p style={{ color: "red" }}>Invalid password</p>
-                }
+            {
+                error && <p style={{ color: "red" }}>Invalid password</p>
+            }
             {
                 validated ? (
-                    <Button className="frontPageButton" type="secondary" onClick={() => {
+                    <Button className="frontPageButton" type="default" onClick={() => {
                         setPasswordInput("")
                         setValidated(false)
                     }}>Hide</Button>

@@ -4,7 +4,8 @@ import { useCallback, useContext, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ethers } from "ethers";
 import { WalletContext } from "../providers/WalletProvider";
-import { encryptData } from "../utils";
+import { createToken, encryptData } from "../utils";
+import { TOKEN_KEY } from "../constants";
 
 const { Password } = Input
 
@@ -25,9 +26,9 @@ function CreateAccount() {
     setSeedPhrase(newSeedPhrase)
     setWallet(ethers.Wallet.fromPhrase(newSeedPhrase).address);
 
-    const token = `${newSeedPhrase}-P${newPassword}`;
-    const enc = encryptData(token);
-    localStorage.setItem('token', enc);
+    const token = createToken(newSeedPhrase, newPassword);
+    const encryptedToken = encryptData(token);
+    localStorage.setItem(TOKEN_KEY, encryptedToken);
   }, [newSeedPhrase, setSeedPhrase, setWallet, newPassword]);
 
   return (
@@ -48,7 +49,7 @@ function CreateAccount() {
         }
       </Card>
       <Password value={newPassword} onChange={(e) => setNewPassword(e.target.value)} className="password" placeholder="Password. Minimum 8 characters." />
-      <Button disabled={disableBtn} className="frontPageButton" type="default" onClick={setWalletAndMnemonic}>
+      <Button disabled={disableBtn} className="frontPageButton" type="primary" onClick={setWalletAndMnemonic}>
         Open your wallet
       </Button>
       <p className="frontPageBottom" onClick={() => navigate("/")}>

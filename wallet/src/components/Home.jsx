@@ -1,6 +1,7 @@
 import { Button } from "antd";
 import mWallet from "../assets/logo.png";
 import { Navigate, useNavigate } from "react-router-dom";
+import { TOKEN_KEY } from "../constants";
 
 function Home() {
   const navigate = useNavigate();
@@ -8,7 +9,7 @@ function Home() {
   return (
     <>
       {
-        localStorage.getItem('token') ?
+        localStorage.getItem(TOKEN_KEY) ?
           <Navigate to="/login" /> :
           <div className="content">
             <div style={{ display: "flex", gap: 10 }}>
