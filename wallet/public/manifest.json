@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Cross Wallet",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "description": "This secure wallet interacts with CrossFi and EVM blockchains, enabling seamless transaction of native coins across various networks.",
     "icons": {
         "128": "logo 128.png"

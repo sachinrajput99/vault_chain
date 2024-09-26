@@ -1,5 +1,5 @@
 import { Button } from "antd";
-import mWallet from "../assets/logo.png";
+import logo from "../assets/logo.png";
 import { Navigate, useNavigate } from "react-router-dom";
 import { TOKEN_KEY } from "../constants";
 
@@ -13,7 +13,7 @@ function Home() {
           <Navigate to="/login" /> :
           <div className="content">
             <div style={{ display: "flex", gap: 10 }}>
-              <img src={mWallet} alt="logo" width={50} style={{ objectFit: 'contain' }} />
+              <img src={logo} alt="logo" width={40} style={{ objectFit: 'contain' }} />
               <h5 style={{ fontWeight: "bold", fontSize: 20 }}>Cross Wallet</h5>
             </div>
             <h2>Hey There</h2>

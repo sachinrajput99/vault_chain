@@ -31,7 +31,7 @@ const LoginPage = () => {
 
   }
   return (
-    <>
+    <div className="content">
       <h1>Login Page</h1>
       <Password value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} placeholder="Type your password here..." className="password" />
 
@@ -53,7 +53,7 @@ const LoginPage = () => {
           <span className="link">Import a different wallet</span>
         </Tooltip>
       </p>
-    </>
+    </div>
   )
 }
 
