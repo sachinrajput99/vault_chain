@@ -71,5 +71,8 @@ For any inquiries or support, feel free to open an issue on the GitHub repositor
 - **GitHub Repository:** [CrossX Wallet Extension](https://github.com/Amal221200/cross-wallet)
 - **Demo Video:** [Watch here](https://www.youtube.com/watch?v=uBDvRxWr-Js)
 - **Project Website:** [CrossX Wallet Chrome Extension](https://chromewebstore.google.com/detail/crossx-wallet/lhkllbobnfhbkfgnoblppaioenenoahf?pli=1)
+- **Readme:** [View Readme](https://dhruv245.github.io/cross-wallet/)
+- **Marketing Documentation:** [View Marketing Documentation](https://dhruv245.github.io/cross-wallet/MARKETING.html)
+- **Technical Documentation:** [View Technical Documentation](https://dhruv245.github.io/cross-wallet/TECHNICAL.html)
 
 Thank you for checking out CrossX! We look forward to your feedback and contributions!
