@@ -1,10 +1,15 @@
-# MIT License
+# License
 
-Copyright (c) 2024 Techsteck Solutions
+## Usage Restrictions
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+**Disclaimer**: The use of this project is strictly prohibited.
 
-1. The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+This software and its associated documentation files (the "Software") are provided for educational and informational purposes only. Unauthorized use, reproduction, modification, distribution, or other exploitation of the Software is not allowed. 
 
-2. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+By using or accessing this Software, you agree to refrain from:
 
+1. **Using the Software** for any purpose, including personal, commercial, or educational.
+2. **Reproducing** or **distributing** the Software in any form without explicit written permission from the authors.
+3. **Modifying** the Software in any way or creating derivative works based on it.
+
+Any violation of these restrictions may result in legal action. If you have questions regarding permitted uses of this Software, please contact the authors for clarification.
