@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+import React from "react";
 /* eslint-disable react/prop-types */
 import TransactionItem from "./TransactionItem"
 
@@ -11,7 +13,7 @@ const Transactions = ({ transactions }) => {
           <TransactionItem key={tx.hash} transaction={tx} />
          ))
         ) : (
-          <span>You seem to not have any transactions yet</span>
+          <span className="font-semibold">You seem to not have any transactions yet</span>
         )
       }
     </>

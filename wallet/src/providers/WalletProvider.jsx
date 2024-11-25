@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+import React from "react"; 
 import { createContext, useState } from 'react'
 
 export const WalletContext = createContext();

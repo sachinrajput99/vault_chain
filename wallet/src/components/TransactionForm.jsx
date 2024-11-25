@@ -1,4 +1,6 @@
 /* eslint-disable react/prop-types */
+// eslint-disable-next-line
+import React from "react";
 import { Button, Input, Spin } from "antd"
 import { CHAINS_CONFIG } from "../chains"
 import { useContext } from "react"
@@ -19,14 +21,14 @@ const TransactionForm = ({ balance, successCallback }) => {
                     <h1>{balance?.toFixed(2)}... {CHAINS_CONFIG[selectedChain].ticker}</h1>
             }
             <div className="sendRow">
-                <p style={{ width: '90px', textAlign: 'left' }}>To:</p>
+                <p  className="font-semibold" style={{ width: '90px', textAlign: 'left' }}>To:</p>
                 <Input value={sendToAddress} onChange={(e) => setSendToAddress(e.target.value)} placeholder="0x..." />
             </div>
             <div className="sendRow">
-                <p style={{ width: '90px', textAlign: 'left' }}>Amount:</p>
+                <p  className="font-semibold" style={{ width: '90px', textAlign: 'left' }}>Amount:</p>
                 <Input value={amountToSend} onChange={(e) => setAmountToSend(e.target.value)} placeholder="Native tokens you wish to send..." />
             </div>
-            <Button type="primary" disabled={balance === 0 || balance === null} style={{ width: '100%', marginTop: '20px', marginBottom: '20px' }} className="frontPageButton" onClick={sendTransaction}>
+            <Button type="default hover:text-gray-600" disabled={balance === 0 || balance === null} style={{ width: '100%', marginTop: '20px', marginBottom: '20px' }} className="frontPageButton" onClick={sendTransaction}>
                 Send Tokens
             </Button>
             {

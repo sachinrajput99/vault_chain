@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+import React from "react";
 import { Avatar, List } from "antd"
 import logo from "../assets/noImg.png";
 
@@ -29,7 +31,7 @@ const TokenItems = ({ tokens }) => {
                 />
             ) : (
                 <>
-                    <span>You seem to not have any tokens yet</span>
+                    <span className="font-semibold">You seem to not have any tokens yet</span>
                     {/* <p className="frontPageBottom">
                 Find Alt Coin Gems:{" "}
                 <a

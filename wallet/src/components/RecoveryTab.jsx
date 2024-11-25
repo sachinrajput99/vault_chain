@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+import React from "react";
 import { Button, Card, Input, notification, Tooltip } from "antd"
 import { useCallback, useContext, useEffect, useState } from "react"
 import { WalletContext } from "../providers/WalletProvider";
@@ -56,7 +58,7 @@ const RecoveryTab = () => {
         <>
             <Password value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} className="password" placeholder="Type your password here..." />
             {
-                error && <p style={{ color: "red" }}>Invalid password</p>
+                error && <p className="bgred bg-red-500 rounded" >Invalid password</p>
             }
             {
                 validated ? (
@@ -64,7 +66,7 @@ const RecoveryTab = () => {
                         setPasswordInput("")
                         setValidated(false)
                     }}>Hide</Button>
-                ) : <Button className="frontPageButton" type="primary" onClick={handleValidate}>Recover Phrase</Button>
+                ) : <Button className="frontPageButton" type="default" onClick={handleValidate}>Recover Phrase</Button>
             }
             <Tooltip title={validated ? "Click to copy the seed phrase" : ""}>
                 <Card className={`seedPhraseContainer ${validated ? "clickEffect" : ""}`} style={{ marginInline: 'auto', marginTop: '9px' }} onClick={handleCopy}>

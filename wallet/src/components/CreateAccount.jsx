@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+import React from "react"; 
 import { Button, Card, Input } from "antd";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { useCallback, useContext, useMemo, useState } from "react";
@@ -39,21 +41,22 @@ function CreateAccount() {
           Once you generate the seed phrase, save it securely in order to recorver your wallet in the future.
         </div>
       </div>
-      <Button className="frontPageButton" type="primary" onClick={generateWallet}>
-        Generate Seed Phrase
-      </Button>
-      <Card className="seedPhraseContainer">
+      
+      <Card className="seedPhraseContainer bg-[#D7BBA8] ">
         {
           newSeedPhrase && <pre style={{ whiteSpace: 'pre-wrap' }}>{newSeedPhrase}
           </pre>
         }
       </Card>
-      <Password value={newPassword} onChange={(e) => setNewPassword(e.target.value)} className="password" placeholder="Password. Minimum 8 characters." />
+      <Button className="frontPageButton" type="default" onClick={generateWallet}>
+        Generate Seed Phrase
+      </Button>
+      <Password value={newPassword} onChange={(e) => setNewPassword(e.target.value)} className="password bg-[#221d1a]  text-white" placeholder="Password. Minimum 8 characters." />
       <Button disabled={disableBtn} className="frontPageButton" type="primary" onClick={setWalletAndMnemonic}>
         Open your wallet
       </Button>
-      <p className="frontPageBottom" onClick={() => navigate("/")}>
-        Back Home
+      <p className=" hover:text-gray-600 mt-2 cursor-pointer" onClick={() => navigate("/")}>
+         Home
       </p>
     </div>
   );

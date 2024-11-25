@@ -1,3 +1,5 @@
+// eslint-disable-next-line
+import React from "react";
 import { useCallback, useContext, useMemo, useState } from "react";
 import { BulbOutlined } from "@ant-design/icons";
 import { Button, Input } from "antd";
@@ -12,15 +14,24 @@ const { TextArea } = Input;
 function RecoverAccount() {
   const { setSeedPhrase, setWallet } = useContext(WalletContext);
 
-  const [seedPhraseInput, setSeedPhraseInput] = useState('');
-  const [passwordInput, setPasswordInput] = useState('');
+  const [seedPhraseInput, setSeedPhraseInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
   const [notValid, setNotValid] = useState(false);
   const navigate = useNavigate();
-  const disableBtn = useMemo(() => (seedPhraseInput.split(" ").length !== 12 || seedPhraseInput.at(-1) === " ") || (passwordInput.length < 8), [seedPhraseInput, passwordInput]);
+  const disableBtn = useMemo(
+    () =>
+      seedPhraseInput.split(" ").length !== 12 ||
+      seedPhraseInput.at(-1) === " " ||
+      passwordInput.length < 8,
+    [seedPhraseInput, passwordInput]
+  );
 
-  const handleInput = useCallback((e) => {
-    setSeedPhraseInput(e.target.value);
-  }, [setSeedPhraseInput]);
+  const handleInput = useCallback(
+    (e) => {
+      setSeedPhraseInput(e.target.value);
+    },
+    [setSeedPhraseInput]
+  );
 
   const handleRecoverWallet = useCallback(() => {
     let recoverWallet;
@@ -42,25 +53,41 @@ function RecoverAccount() {
     navigate("/your-wallet");
   }, [seedPhraseInput, setWallet, setSeedPhrase, navigate, passwordInput]);
 
-
   return (
     <div className="content">
       <div className="mnemonic">
         <BulbOutlined style={{ fontSize: "20px" }} />
         <div>
-          Type your seed phrase in the field below to recover your wallet. (it should include 12 words separated by spaces)
+          Type your seed phrase in the field below to recover your wallet. (it
+          should include 12 words separated by spaces)
         </div>
       </div>
 
-      <TextArea rows={7} value={seedPhraseInput} onChange={handleInput} placeholder="Type your seed phrase here..." className="seedPhraseContainer" />
+      <TextArea
+        rows={7}
+        value={seedPhraseInput}
+        onChange={handleInput}
+        placeholder="Type your seed phrase here..."
+        className="seedPhraseContainer"
+      />
 
-      <Input.Password value={passwordInput} onChange={(e) => setPasswordInput(e.target.value)} className="password" placeholder="Password. Minimum 8 characters." />
+      <Input.Password
+        value={passwordInput}
+        onChange={(e) => setPasswordInput(e.target.value)}
+        className="password"
+        placeholder="Password. Minimum 8 characters."
+      />
 
-      <Button disabled={disableBtn} className="frontPageButton" type="primary" onClick={handleRecoverWallet}>
+      <Button
+        disabled={disableBtn}
+        className="frontPageButton"
+        type="default"
+        onClick={handleRecoverWallet}
+      >
         Recover Wallet
       </Button>
       {notValid && <p style={{ color: "red" }}>Invalid seed phrase</p>}
-      <p className="frontPageBottom" onClick={() => navigate("/")}>
+      <p className=" cursor-pointer hover:text-blue-400 mt-2" onClick={() => navigate("/")}>
         <span>Back To Home</span>
       </p>
     </div>
