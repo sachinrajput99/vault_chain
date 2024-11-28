@@ -67,19 +67,20 @@ header {
 
 .content {
   text-align: center;
-  /* width: 350px; */
-  height: 450px;
+  /* width: 460px; */
+  width: inherit;
+  height: inherit;
   overflow-y: auto;
-  /* justify-content: flex-start;
+  justify-content: flex-start;
   align-items: center;
-  display: flex; */
-  /* flex-direction: column; */
+  display: flex;
+  flex-direction: column;
   position: relative;
 }
 
 .mnemonic {
-  color: #faad14;
-  background: #fffbe6;
+  color: #ff9e03;
+  background: #dc630d00;
   border: 1px solid #ffe58f;
   padding: 5px;
   text-align: justify;

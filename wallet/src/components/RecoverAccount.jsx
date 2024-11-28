@@ -2,7 +2,7 @@
 import React from "react";
 import { useCallback, useContext, useMemo, useState } from "react";
 import { BulbOutlined } from "@ant-design/icons";
-import { Button, Input } from "antd";
+import {  Input } from "antd";
 import { useNavigate } from "react-router-dom";
 import { ethers } from "ethers";
 import { WalletContext } from "../providers/WalletProvider";
@@ -54,42 +54,49 @@ function RecoverAccount() {
   }, [seedPhraseInput, setWallet, setSeedPhrase, navigate, passwordInput]);
 
   return (
-    <div className="content">
-      <div className="mnemonic">
-        <BulbOutlined style={{ fontSize: "20px" }} />
-        <div>
-          Type your seed phrase in the field below to recover your wallet. (it
-          should include 12 words separated by spaces)
-        </div>
-      </div>
+    <div className="content mb-5">
+    
 
       <TextArea
         rows={7}
         value={seedPhraseInput}
         onChange={handleInput}
         placeholder="Type your seed phrase here..."
-        className="seedPhraseContainer"
+        className="seedPhraseContainer  bg-gray-900"
       />
+        <div className="mnemonic my-5 ">
+        <BulbOutlined style={{ fontSize: "20px" }} />
+        <p>
+          Enter your 12-word seed phrase in the field below to restore your
+          wallet. Make sure the words are separated by spaces.
+        </p>
+      </div>
 
       <Input.Password
         value={passwordInput}
         onChange={(e) => setPasswordInput(e.target.value)}
-        className="password"
+        className="password  bg-gray-900"
         placeholder="Password. Minimum 8 characters."
       />
-
-      <Button
+      <button
         disabled={disableBtn}
-        className="frontPageButton"
+        className="   text-white mt-4  py-1 px-2 rounded border whitespace-nowrap bg-purple-700  hover:bg-purple-600 "
         type="default"
         onClick={handleRecoverWallet}
       >
         Recover Wallet
-      </Button>
-      {notValid && <p style={{ color: "red" }}>Invalid seed phrase</p>}
-      <p className=" cursor-pointer hover:text-blue-400 mt-2" onClick={() => navigate("/")}>
-        <span>Back To Home</span>
-      </p>
+      </button>
+      <div className="absolute bottom-10">
+        <div className="flex flex-col gap-6">
+          {notValid && <p style={{ color: "red" }}>Invalid seed phrase</p>}
+          <p
+            className="   text-white  py-1 px-2 rounded border whitespace-nowrap bg-purple-700  hover:bg-purple-600  "
+            onClick={() => navigate("/")}
+          >
+            <span>Back To Home</span>
+          </p>
+        </div>
+      </div>
     </div>
   );
 }

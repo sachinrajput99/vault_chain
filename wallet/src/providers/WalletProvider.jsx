@@ -10,9 +10,10 @@ const WalletProvider = ({ children }) => {
     const [selectedChain, setSelectedChain] = useState('4157');
     const [wallet, setWallet] = useState(null);
     const [seedPhrase, setSeedPhrase] = useState(null);
+    const [cosmosAddress, setCosmosAddress] = useState(null);
 
     return (
-        <WalletContext.Provider value={{ selectedChain, setSelectedChain, wallet, setWallet, seedPhrase, setSeedPhrase }}>
+        <WalletContext.Provider value={{ selectedChain, setSelectedChain, wallet, setWallet, seedPhrase, setSeedPhrase,cosmosAddress, setCosmosAddress }}>
             {children}
         </WalletContext.Provider>
     )

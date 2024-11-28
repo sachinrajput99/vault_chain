@@ -1,6 +1,6 @@
 /* eslint-disable-next-line*/
 import React from "react";
-import { Button, Input, Tooltip } from "antd";
+import {  Input, Tooltip } from "antd";
 import { ethers } from "ethers";
 import { useContext, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -32,45 +32,52 @@ const LoginPage = () => {
     navigate("/your-wallet");
   };
   return (
-    <div className="content">
-      <h1>Login Page</h1>
+    <div className="content flex justify-around items-center ">
+     <div className="flex justify-center items-center flex-col gap-7">
+     <h1 className="font-bold text-3xl ">Login Page</h1>
       <Password
         value={passwordInput}
         onChange={(e) => setPasswordInput(e.target.value)}
         placeholder="Type your password here..."
-        className="password"
+        className="password bg-gray-900"
       />
 
       {notValid && <p style={{ color: "red" }}>Invalid password</p>}
-      <Button
+      <button
         disabled={disableBtn}
-        className="frontPageButton"
-        type="default"
+        className="   text-white  py-1 px-6 rounded border whitespace-nowrap  bg-purple-800  hover:bg-purple-600  "
         onClick={handleLogin}
       >
         Unlock
-      </Button>
+      </button>
 
-      <p
-        className="frontPageBottom noHover"
-        style={{ flexDirection: "column", alignItems: "center" }}
-      >
-        <Tooltip
-          title="Recover your wallet with the seed phrase and type a new password"
-          onClick={() => navigate("/recover")}
+     </div>
+      <div className="flex flex-col gap-6">
+        <button
+         className="   text-white  py-1 px-2 rounded border whitespace-nowrap  bg-purple-700  hover:bg-purple-600  "  
+      
         >
-          <span className="link hover:text-gray-600">Forgot Password</span>
-        </Tooltip>
-        <Tooltip
-          title="Use another wallet"
-          onClick={() => {
-            localStorage.removeItem(TOKEN_KEY);
-            navigate("/");
-          }}
-        >
-          <span className="link hover:text-gray-600">Import a different wallet</span>
-        </Tooltip>
-      </p>
+          <Tooltip
+            title="Recover your wallet with the seed phrase and type a new password"
+            onClick={() => navigate("/recover")}
+          >
+         Forgot Password
+          </Tooltip>
+        </button>
+        <button
+         className="   text-white  py-1 px-2 rounded border whitespace-nowrap  bg-purple-700  hover:bg-purple-600  "  
+         >
+          <Tooltip
+            title="Use another wallet"
+            onClick={() => {
+              localStorage.removeItem(TOKEN_KEY);
+              navigate("/");
+            }}
+          >
+            Import a different wallet
+          </Tooltip>
+        </button>
+      </div>
     </div>
   );
 };
