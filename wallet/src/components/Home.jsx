@@ -21,12 +21,12 @@ function Home() {
         <Navigate to="/login" />
       ) : (
         <div className="content flex flex-col items-center  justify-around bg-black-900 ">
-          <button
+          {/* <button
             className="  text-white mt-4  py-1 px-2 rounded border whitespace-nowrap bg-purple-700  hover:bg-purple-600 "
             onClick={() => navigate("/fauscet")}
           >
            Faucet
-          </button>
+          </button> */}
           <div
             // className=" flex flex-col items-center  "
             style={{ display: "flex ", gap: 10 }}

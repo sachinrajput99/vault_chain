@@ -5,6 +5,13 @@ import logo from "../assets/noImg.png";
 
 // eslint-disable-next-line react/prop-types
 const TokenItems = ({ tokens }) => {
+    // token add mpx and xfi
+
+
+    // data from token
+    // tokens.xfi=
+    // token.mpx=
+
     return (
         <>
             {tokens ? (

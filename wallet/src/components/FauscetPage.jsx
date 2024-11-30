@@ -16,7 +16,7 @@ const FauscetPage = () => {
     <div className="content flex justify-around items-center  gap-4 mt-2 ">
       <div className=" flex gap-3 flex-col mx-7 ">
         {cosmosAddress && (
-          <div>
+          <div >
             {" "}
             <div className="walletName">Wallet</div>
             <Tooltip title={cosmosAddress}>
@@ -57,7 +57,7 @@ const FauscetPage = () => {
           <li>Paste the copied wallet address into the provided field.</li>
         </ul>
 
-        <p className="  text-white font font-bold mt-10 mx-8 border border-purple-600 border-3 p-5">
+        <p className="  text-white font font-bold mt-4 mx-8 border border-purple-600 border-3 p-5">
           You need to have some native coins in your wallet to make
           transactions.
         </p>

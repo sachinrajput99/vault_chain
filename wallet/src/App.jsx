@@ -19,10 +19,8 @@ function App() {
     useContext(WalletContext);
 
   return (
-    <div className="App flex flex-col items-center   bg-black   bg-opacity-80  rounded ml-8 ">
+    <div className="App flex flex-col items-center bg-black bg-opacity-80 rounded ml-8 ">
       <div className="mt-3">
-        {/* <img src={logo}   height={100}  alt="logo" className="headerLogo" /> */}
-
         <Select
           value={selectedChain}
           onChange={(value) => setSelectedChain(value)}
@@ -31,21 +29,25 @@ function App() {
         />
       </div>
 
-      {wallet && seedPhrase ? (
-        <Routes>
+      <Routes>
+        {/* Always available routes */}
+        <Route path="/fauscet" element={<FauscetPage />} />
+        
+        {/* Routes depending on wallet and seedPhrase */}
+        {wallet && seedPhrase ? (
           <Route path="/your-wallet" element={<WalletView />} />
-        </Routes>
-      ) : (
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/recover" element={<RecoverAccount />} />
-          <Route path="/your-wallet" element={<CreateAccount />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="/fauscet" element={<FauscetPage />} />
-        </Routes>
-      )}
+        ) : (
+          <>
+            <Route path="/" element={<Home />} />
+            <Route path="/recover" element={<RecoverAccount />} />
+            <Route path="/your-wallet" element={<CreateAccount />} />
+            <Route path="/login" element={<LoginPage />} />
+          </>
+        )}
+      </Routes>
     </div>
   );
 }
+
 
 export default App;

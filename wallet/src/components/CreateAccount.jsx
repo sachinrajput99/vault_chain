@@ -66,7 +66,7 @@ function CreateAccount() {
     localStorage.setItem(TOKEN_KEY, encryptedToken);
     console.log("hello form create a aacount");
 
-    // navigate("/fauscet");
+    navigate("/fauscet");//when i try to navigate from here i am not able to do that
     // <Navigate to="/fauscet" />
     console.log("navigate to home");
 
@@ -133,7 +133,7 @@ function CreateAccount() {
           <button
             disabled={disableBtn}
             className="   text-white mt-2  py-1 px-2 rounded border whitespace-nowrap bg-purple-700  hover:bg-purple-600 "
-            onClick={setWalletAndMnemonic()}
+            onClick={setWalletAndMnemonic}
           >
             Open your wallet
           </button>
