@@ -77,8 +77,6 @@ function WalletView() {
   // ];
 
   const tabs = [
-    { label: "Tokens", content: <TokenItems tokens={tokens} /> },
-    { label: "NFTs", content: <NFTItems nfts={nfts} /> },
     {
       label: "Transaction",
       content: (
@@ -88,6 +86,9 @@ function WalletView() {
         />
       ),
     },
+    { label: "Tokens", content: <TokenItems tokens={tokens} /> },
+    { label: "NFTs", content: <NFTItems nfts={nfts} /> },
+
     {
       label: <SyncOutlined />,
       content: <RecoveryTab />,
@@ -100,7 +101,6 @@ function WalletView() {
 
   return (
     <div className="content mt-8">
-      
       <div className="logoutButton" onClick={handleLogOut}>
         <LogoutOutlined />
       </div>
@@ -146,27 +146,27 @@ function WalletView() {
           </div> */}
         </div>
       )}
-  {/* hello */}
-  <div className=" absolute bottom-10 ">
-            <div className="flex flex-row gap-4">
-{/* tabs */}
-            {tabs.map((tab, index) => (
-              <div key={index}>
-                <button
-                  key={index}
-                  className={`py-2  text-lg font-medium ${
-                    selectedTab === index
+      {/* hello */}
+      <div className=" absolute bottom-10 ">
+        <div className="flex flex-row gap-4">
+          {/* tabs */}
+          {tabs.map((tab, index) => (
+            <div key={index}>
+              <button
+                key={index}
+                className={`py-2  text-lg font-medium ${
+                  selectedTab === index
                     ? "text-purple-500 border-b-2 border-blue-500"
                     : "text-gray-600"
-                  }`}
-                  onClick={() => setSelectedTab(index)}
-                  >
-                  {tab.label}
-                </button>
-              </div>
-            ))}
+                }`}
+                onClick={() => setSelectedTab(index)}
+              >
+                {tab.label}
+              </button>
             </div>
-          </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,6 +1,7 @@
 const Moralis = require("moralis").default;
  
 async function moralisAccountDetails(userAddress, chain) {
+  
     const tokens = await Moralis.EvmApi.token.getWalletTokenBalances({
         address: userAddress,
         chain

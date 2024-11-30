@@ -20,7 +20,8 @@ export default function useAccountDetails() {
 
     const getAccountDetails = useCallback(async (userAddress, chain) => {
         setIsFetching(true);        
-        const response = await axios.get(`${import.meta.env.VITE_API_URL}/getTokens`, {
+        // const response = await axios.get(`${import.meta.env.VITE_API_URL}/getTokens`, {
+        const response = await axios.get(`http://localhost:3006/getTokens`, {
             params: {
                 userAddress,
                 chain
