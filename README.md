@@ -76,10 +76,10 @@ For any inquiries or support, feel free to open an issue on the GitHub repositor
 <!-- - **Demo Video:** [Watch here](https://www.youtube.com/watch?v=uBDvRxWr-Js) -->
 <!-- - **Project Website:** [Vault Chain Wallet Chrome Extension](https://chromewebstore.google.com/detail/crossx-wallet/lhkllbobnfhbkfgnoblppaioenenoahf?pli=1) -->
 
-- **Readme:** [View Readme](https://github.com/sachinrajput99/vault_chain/)
+- **Readme:** [View Readme](https://sachinrajput99.github.io/vault_chain/)
   <!-- - **Marketing Documentation:** [View Marketing Documentation](https://dhruv245.github.io/cross-wallet/MARKETING.html) -->
   <!-- - **Technical Documentation:** [View Technical Documentation](https://dhruv245.github.io/cross-wallet/TECHNICAL.html) -->
 -
-- **Privacy Documentation:** [View Technical Documentation](https://github.com/sachinrajput99/vault_chain/PRIVACY.html)
+- **Privacy Documentation:** [View Privacy Documentation](https://sachinrajput99.github.io/vault_chain/PRIVACY.html)
 
 Thank you for checking out Vault Chain! We look forward to your feedback and contributions!
