@@ -1,6 +1,6 @@
 # Vault Chain Wallet Extension
 
-<img src="https://github.com/user-attachments/assets/5bbd713d-7ce8-4182-acd1-c1e1272150e8" alt="Vault Chain Logo" width="100" style="background-color: black;"/>
+<img src="./logo.png" alt="Vault Chain Logo" width="100" style="background-color: black;"/>
 
 ## Overview
 
@@ -77,8 +77,8 @@ For any inquiries or support, feel free to open an issue on the GitHub repositor
 <!-- - **Project Website:** [Vault Chain Wallet Chrome Extension](https://chromewebstore.google.com/detail/crossx-wallet/lhkllbobnfhbkfgnoblppaioenenoahf?pli=1) -->
 
 - **Readme:** [View Readme](https://github.com/sachinrajput99/vault_chain/)
-<!-- - **Marketing Documentation:** [View Marketing Documentation](https://dhruv245.github.io/cross-wallet/MARKETING.html) -->
-<!-- - **Technical Documentation:** [View Technical Documentation](https://dhruv245.github.io/cross-wallet/TECHNICAL.html) -->
+  <!-- - **Marketing Documentation:** [View Marketing Documentation](https://dhruv245.github.io/cross-wallet/MARKETING.html) -->
+  <!-- - **Technical Documentation:** [View Technical Documentation](https://dhruv245.github.io/cross-wallet/TECHNICAL.html) -->
 -
 - **Privacy Documentation:** [View Technical Documentation](https://github.com/sachinrajput99/vault_chain/PRIVACY.html)
 
