@@ -1,10 +1,12 @@
-# CrossX Wallet Extension
+# Vault Chain Wallet Extension
 
-<img src="https://github.com/user-attachments/assets/5bbd713d-7ce8-4182-acd1-c1e1272150e8" alt="CrossX Logo" width="100" style="background-color: black;"/>
+<img src="https://github.com/user-attachments/assets/5bbd713d-7ce8-4182-acd1-c1e1272150e8" alt="Vault Chain Logo" width="100" style="background-color: black;"/>
 
 ## Overview
 
-CrossX is a browser wallet extension designed to facilitate seamless native coin transactions across CrossFi and EVM-compatible blockchains. The wallet supports a variety of functionalities, including 12-word seed phrase security, sending and receiving coins, and fetching ERC-20 tokens and NFTs. As it evolves, CrossX aims to become a comprehensive solution for managing digital assets, providing a unified and secure experience for users across multiple blockchain ecosystems.
+VaultChain is a Chrome extension designed to simplify blockchain asset management while ensuring security and ease of use. It allows users to log in using their seed phrase, providing seamless and secure access to their wallets. The extension displays a comprehensive overview of balances, including tokens and NFTs, enabling users to easily track and manage their holdings. The user-friendly interface ensures a smooth experience for managing blockchain assets.
+
+VaultChain features a detailed transaction history, listing all past activities such as token transfers, NFT interactions, and smart contract executions. Each transaction includes essential details like the date, amount, recipient, and status, providing users with complete transparency over their activity. Tokens and NFTs are neatly categorized, with tokens offering detailed information such as contract addresses, and NFTs displaying images and metadata for enhanced visibility.
 
 ## Key Features
 
@@ -16,7 +18,7 @@ CrossX is a browser wallet extension designed to facilitate seamless native coin
 
 ## Problem Statement
 
-With the rapid evolution of blockchain technology, users face challenges in managing assets across multiple networks. Traditional wallets often require the use of multiple applications, leading to confusion and inefficiency. CrossX addresses this fragmentation, enabling users to manage their assets from a single platform.
+With the rapid evolution of blockchain technology, users face challenges in managing assets across multiple networks. Traditional wallets often require the use of multiple applications, leading to confusion and inefficiency. Vault Chain addresses this fragmentation, enabling users to manage their assets from a single platform.
 
 ## Getting Started
 
@@ -27,16 +29,18 @@ With the rapid evolution of blockchain technology, users face challenges in mana
 
 ### Installation
 
-1. Download the latest release of the CrossX wallet from the [Chrome Web Store](https://chromewebstore.google.com/detail/crossx-wallet/lhkllbobnfhbkfgnoblppaioenenoahf?pli=1).
+1. Download the latest release of the Vault Chain wallet from the [Chrome Web Store](https://chromewebstore.google.com/detail/vault-chain/lhkllbobnfhbkfgnoblppaioenenoahf?pli=1).
 2. Follow the installation instructions on the Chrome Web Store.
 
 ### Usage
 
 1. **Create a Wallet:**
-   - Launch the CrossX extension.
+
+   - Launch the Vault Chain extension.
    - Follow the on-screen instructions to create a new wallet, securely storing your 12-word seed phrase.
 
 2. **Send/Receive Coins:**
+
    - Navigate to the “Send” or “Receive” tab to manage your transactions.
 
 3. **Manage Tokens and NFTs:**
@@ -44,7 +48,7 @@ With the rapid evolution of blockchain technology, users face challenges in mana
 
 ## Future Development
 
-CrossX is continuously evolving. Upcoming features include:
+Vault Chain is continuously evolving. Upcoming features include:
 
 - **Manual Network Addition:** Allowing users to add custom blockchains.
 - **Advanced DeFi Integrations:** Staking, yield farming, and liquidity provision features.
@@ -52,13 +56,13 @@ CrossX is continuously evolving. Upcoming features include:
 - **Mobile App Integration:** Expanding access to a wider audience through mobile devices.
 - **Multi-Signature Support:** Enhancing security for institutional users.
 
-## Contributing
+<!-- ## Contributing
 
-Contributions are welcome! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute to the project.
-
+Contributions are welcome! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) file for guidelines on how to contribute to the project. -->
+<!--
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE.md) file for details. -->
 
 ## Support
 
@@ -68,11 +72,14 @@ For any inquiries or support, feel free to open an issue on the GitHub repositor
 
 ## Links
 
-- **GitHub Repository:** [CrossX Wallet Extension](https://github.com/Amal221200/cross-wallet)
-- **Demo Video:** [Watch here](https://www.youtube.com/watch?v=uBDvRxWr-Js)
-- **Project Website:** [CrossX Wallet Chrome Extension](https://chromewebstore.google.com/detail/crossx-wallet/lhkllbobnfhbkfgnoblppaioenenoahf?pli=1)
-- **Readme:** [View Readme](https://dhruv245.github.io/cross-wallet/)
-- **Marketing Documentation:** [View Marketing Documentation](https://dhruv245.github.io/cross-wallet/MARKETING.html)
-- **Technical Documentation:** [View Technical Documentation](https://dhruv245.github.io/cross-wallet/TECHNICAL.html)
+<!-- - **GitHub Repository:** [Vault Chain Wallet Extension](https://github.com/Amal221200/cross-wallet) -->
+<!-- - **Demo Video:** [Watch here](https://www.youtube.com/watch?v=uBDvRxWr-Js) -->
+<!-- - **Project Website:** [Vault Chain Wallet Chrome Extension](https://chromewebstore.google.com/detail/crossx-wallet/lhkllbobnfhbkfgnoblppaioenenoahf?pli=1) -->
 
-Thank you for checking out CrossX! We look forward to your feedback and contributions!
+- **Readme:** [View Readme](https://github.com/sachinrajput99/vault_chain/)
+<!-- - **Marketing Documentation:** [View Marketing Documentation](https://dhruv245.github.io/cross-wallet/MARKETING.html) -->
+<!-- - **Technical Documentation:** [View Technical Documentation](https://dhruv245.github.io/cross-wallet/TECHNICAL.html) -->
+-
+- **Privacy Documentation:** [View Technical Documentation](https://github.com/sachinrajput99/vault_chain/PRIVACY.html)
+
+Thank you for checking out Vault Chain! We look forward to your feedback and contributions!
