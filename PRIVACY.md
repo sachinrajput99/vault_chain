@@ -72,4 +72,4 @@ We may update this Privacy Policy from time to time. Changes will be effective i
 
 For any inquiries or support, feel free to open an issue on the GitHub repository or contact us via our [social media](https://x.com/DhruvJ245).
  
-*Website:* [Readme](https://praveen836845.github.io/Flex_wallet/)
+*Website:* [Readme](https://sachinrajput99.github.io/vault_chain/)
